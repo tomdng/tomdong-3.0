@@ -7,6 +7,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
     "airbnb",
     "airbnb/hooks",
     "plugin:prettier/recommended"
@@ -23,7 +24,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
     "react/jsx-filename-extension": [
       1,
@@ -38,7 +39,8 @@ module.exports = {
         ts: "never",
         tsx: "never"
       }
-    ]
+    ],
+    "react/prop-types": 0
   },
   settings: {
     "import/resolver": {
