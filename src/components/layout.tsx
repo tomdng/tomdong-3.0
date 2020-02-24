@@ -5,18 +5,18 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 /* eslint react/jsx-one-expression-per-line: 0 */
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import styled, { AnyStyledComponent } from "styled-components"
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
+import styled, { AnyStyledComponent } from 'styled-components';
 
-import Header from "./header"
-import "./override-defaults.css"
+import Navbar from './navbar';
+import './override-defaults.css';
 
 const StyledSiteWrapper: AnyStyledComponent = styled.div`
   display: flex;
   flex-direction: column;
   width: 100vw;
-`
+`;
 
 const Layout = ({ children }): JSX.Element => {
   const data = useStaticQuery(graphql`
@@ -27,11 +27,11 @@ const Layout = ({ children }): JSX.Element => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <StyledSiteWrapper>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Navbar siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
           margin: `0 auto`,
@@ -46,7 +46,7 @@ const Layout = ({ children }): JSX.Element => {
         </footer>
       </div>
     </StyledSiteWrapper>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
