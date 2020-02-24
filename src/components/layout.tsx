@@ -4,15 +4,21 @@
  *
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
-
+/* eslint react/jsx-one-expression-per-line: 0 */
 import React from "react"
-import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import styled, { AnyStyledComponent } from "styled-components"
 
 import Header from "./header"
-import "./layout.css"
+import "./override-defaults.css"
 
-const Layout = ({ children }) => {
+const StyledSiteWrapper: AnyStyledComponent = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+`
+
+const Layout = ({ children }): JSX.Element => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,7 +30,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <StyledSiteWrapper>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -36,16 +42,11 @@ const Layout = ({ children }) => {
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+          <a href="https://www.gatsbyjs.org"> YEEEEEEET</a>
         </footer>
       </div>
-    </>
+    </StyledSiteWrapper>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

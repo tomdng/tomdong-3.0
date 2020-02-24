@@ -8,9 +8,10 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    'prettier/@typescript-eslint',
     "airbnb",
     "airbnb/hooks",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
   ],
   globals: {
     Atomics: "readonly",
