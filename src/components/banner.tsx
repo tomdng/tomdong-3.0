@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
 
 const StyledBannerWrapper: AnyStyledComponent = styled.div`
   display: flex;
@@ -9,30 +8,18 @@ const StyledBannerWrapper: AnyStyledComponent = styled.div`
   align-content: center;
 `;
 
-const Banner = (): JSX.Element => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        allMarkdownRemark(
-          filter: { frontmatter: { title: { eq: "Staring at the sky" } } }
-        ) {
-          nodes {
-            frontmatter {
-              title
-              desc
-            }
-          }
-        }
-      }
-    `
-  );
+interface BannerProps {
+  content: {
+    title: string;
+    desc: string;
+  };
+}
 
-  console.log(data.allMarkdownRemark.nodes[0].frontmatter);
-
+const Banner = ({ content }: BannerProps): JSX.Element => {
   return (
     <StyledBannerWrapper>
-      <h1>{data.allMarkdownRemark.nodes[0].frontmatter.title}</h1>
-      <p>{data.allMarkdownRemark.nodes[0].frontmatter.desc}</p>
+      <h1>{content.title}</h1>
+      <p>{content.desc}</p>
     </StyledBannerWrapper>
   );
 };
