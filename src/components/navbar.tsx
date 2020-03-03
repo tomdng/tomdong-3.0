@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 
 const StyledNavbar: AnyStyledComponent = styled.header`
   width: 100%;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +25,7 @@ interface NavbarProps {
   siteTitle: string;
 }
 
-const Navbar = ({ siteTitle }: NavbarProps): JSX.Element => (
+const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => (
   <StyledNavbar>
     <StyledNavbarContent>
       <h1>

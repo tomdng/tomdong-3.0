@@ -1,8 +1,8 @@
 /* eslint @typescript-eslint/camelcase: 0 */
 module.exports = {
   siteMetadata: {
-    title: `Bruh moment`,
-    description: `Yay Gatsby bruh.`,
+    title: `Tom Dong`,
+    description: `Tom Dong is on a mission to make apps beautiful not only on the outside with beautiful design but also on the inside with great functionality.`,
     author: `Tom Dong`,
   },
   plugins: [

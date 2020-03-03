@@ -1,5 +1,5 @@
 ---
 id: 'home-banner'
-title: 'Staring at the sky'
-desc: 'Fish ipsum text sentence that is amazingly long and beautiful.'
+title: 'I design and build apps and websites.'
+desc: 'I’m a design-oriented front-end developer on a journey of creating beautiful but functional and meaningful webapps.'
 ---

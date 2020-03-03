@@ -13,12 +13,14 @@ import Navbar from './navbar';
 import './override-defaults.css';
 
 const StyledSiteWrapper: AnyStyledComponent = styled.div`
+  max-width: 100vw;
+  overflow: none;
   display: flex;
   flex-direction: column;
-  width: 100vw;
 `;
 
-const Layout = ({ children }): JSX.Element => {
+// TODO: Look into defining styled-component themes here
+const Layout: React.FC = ({ children }): JSX.Element => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
