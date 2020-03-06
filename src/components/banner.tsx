@@ -3,7 +3,7 @@ import styled, { AnyStyledComponent } from 'styled-components';
 import { offWhite } from '../settings';
 
 const StyledBannerWrapper: AnyStyledComponent = styled.div`
-  height: calc(100vh - 5rem);
+  height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -26,7 +26,7 @@ const StyledTextWrapper: AnyStyledComponent = styled.div`
   }
 
   p {
-    margin: 1rem 0;
+    margin: 1.5rem 0;
     font-size: 18px;
   }
 `;
