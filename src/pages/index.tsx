@@ -1,9 +1,14 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Banner } from '../components/banner';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+
+const Filler: AnyStyledComponent = styled.div`
+  height: 200vh;
+`;
 
 interface FrontMatterInterface {
   frontmatter: {
@@ -29,6 +34,7 @@ const IndexPage = ({ data }: QueryProps): JSX.Element => {
       <p>Welcome to your new Gatsby site.</p>
       <p>Now go build something great.</p>
       <Link to="/about-page/">Go to page 2</Link>
+      <Filler />
     </Layout>
   );
 };

@@ -1,21 +1,26 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
+import { CSSTransition } from 'react-transition-group';
 import { Link } from 'gatsby';
 import { offWhite, textPrimary, textSecondary } from '../settings';
 
 interface StyleNavProps {
   visible: boolean;
 }
-
+// TODO: Clean up CSS transitions
 const StyledNavbar: AnyStyledComponent = styled.header`
   width: 100%;
   height: 5rem;
   background: ${offWhite};
   position: fixed;
-  display: ${(props: StyleNavProps): string =>
-    props.visible ? 'flex' : 'none'};
+  display: flex;
   justify-content: center;
   align-items: center;
+
+  transition: 0.2s ease-in-out;
+  transform: translateY(
+    ${(props: StyleNavProps): number => (props.visible ? 0 : -5)}rem
+  );
 `;
 
 const StyledNavbarContent: AnyStyledComponent = styled.div`
@@ -52,7 +57,7 @@ const StyledLink: AnyStyledComponent = styled(Link)`
 interface NavbarProps {
   siteTitle: string;
 }
-// TODO: Navbar still needs CSS tranisition animation
+
 const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
   const [curYPos, setCurYPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -75,18 +80,20 @@ const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
   }, [handleScroll]);
 
   return (
-    <StyledNavbar visible={visible}>
-      <StyledNavbarContent>
-        <StyledTitle to="/">
-          <h1>{siteTitle}</h1>
-        </StyledTitle>
-        <StyledNavGroup>
-          <StyledLink to="/about-page">
-            <h1>About</h1>
-          </StyledLink>
-        </StyledNavGroup>
-      </StyledNavbarContent>
-    </StyledNavbar>
+    <CSSTransition in={visible} timeout={10}>
+      <StyledNavbar visible={visible}>
+        <StyledNavbarContent>
+          <StyledTitle to="/">
+            <h1>{siteTitle}</h1>
+          </StyledTitle>
+          <StyledNavGroup>
+            <StyledLink to="/about-page">
+              <h1>About</h1>
+            </StyledLink>
+          </StyledNavGroup>
+        </StyledNavbarContent>
+      </StyledNavbar>
+    </CSSTransition>
   );
 };
 
