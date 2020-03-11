@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import Layout from '../components/layout';
@@ -6,8 +7,10 @@ import SEO from '../components/seo';
 
 import { offWhite, textPrimary, textSecondary } from '../settings/index';
 
+// TODO: See if we want to have the footer immediately visible or if we
+// want to scroll down to see the footer
 const StyledAboutWrapper: AnyStyledComponent = styled.div`
-  height: 100vh;
+  height: calc(100vh - 200px);
   background-color: ${offWhite};
   display: flex;
   flex-direction: column;
@@ -17,26 +20,61 @@ const StyledAboutWrapper: AnyStyledComponent = styled.div`
   h1 {
     font-size: 72px;
     font-weight: 700;
-    margin: 2rem 0;
+    margin: 1rem 0;
     color: ${textPrimary};
   }
+`;
+
+const StyledContent: AnyStyledComponent = styled.div`
+  max-width: 700px;
+  font-size: 18px;
 
   p {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0.5rem 0;
+    margin: 2rem 0;
     color: ${textSecondary};
   }
 `;
 
-const SecondPage = (): JSX.Element => (
-  <Layout>
-    <SEO title="Page two" />
-    <StyledAboutWrapper>
-      <h1>Hi from the second page</h1>
-      <p>Welcome to page 2</p>
-    </StyledAboutWrapper>
-  </Layout>
-);
+interface AboutInterface {
+  html: HTMLElement;
+  frontmatter: {
+    title: string;
+  };
+}
+
+interface AboutQueryProps {
+  data: {
+    about: {
+      nodes: Array<AboutInterface>;
+    };
+  };
+}
+
+const SecondPage = ({ data }: AboutQueryProps): JSX.Element => {
+  const content = data.about.nodes[0];
+
+  return (
+    <Layout>
+      <SEO title="Page two" />
+      <StyledAboutWrapper>
+        <h1>{content.frontmatter.title}</h1>
+        <StyledContent dangerouslySetInnerHTML={{ __html: content.html }} />
+      </StyledAboutWrapper>
+    </Layout>
+  );
+};
+
+export const query = graphql`
+  query {
+    about: allMarkdownRemark(filter: { frontmatter: { id: { eq: "about" } } }) {
+      nodes {
+        html
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+`;
 
 export default SecondPage;
