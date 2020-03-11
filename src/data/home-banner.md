@@ -1,5 +1,6 @@
 ---
 id: 'home-banner'
-title: 'I design and build apps and websites.'
-desc: 'I’m a design-oriented front-end developer on a journey of creating beautiful but functional and meaningful webapps.'
+title: 'Hi! I design and build apps and websites.'
+desc: 'I’m a computer science student focusing on design-oriented front-end development, blending beautiful design with actual functionality and performance.'
+desc2: 'Plus I know how to do backend as well for the sake of the bigger picture. Check out my projects below!'
 ---

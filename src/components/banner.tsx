@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
-import { offWhite } from '../settings';
+import { offWhite, textPrimary, textSecondary } from '../settings';
 
 const StyledBannerWrapper: AnyStyledComponent = styled.div`
   height: 100vh;
@@ -13,7 +13,7 @@ const StyledBannerWrapper: AnyStyledComponent = styled.div`
 `;
 
 const StyledTextWrapper: AnyStyledComponent = styled.div`
-  max-width: 50%;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,12 +22,15 @@ const StyledTextWrapper: AnyStyledComponent = styled.div`
   h1 {
     font-size: 72px;
     font-weight: 700;
-    margin: 0;
+    margin: 2rem 0;
+    color: ${textPrimary};
   }
 
   p {
-    margin: 1.5rem 0;
     font-size: 18px;
+    font-weight: 400;
+    margin: 0.5rem 0;
+    color: ${textSecondary};
   }
 `;
 
@@ -35,6 +38,7 @@ interface BannerProps {
   content: {
     title: string;
     desc: string;
+    desc2: string;
   };
 }
 
@@ -44,6 +48,7 @@ const Banner: React.FC<BannerProps> = ({ content }): JSX.Element => {
       <StyledTextWrapper>
         <h1>{content.title}</h1>
         <p>{content.desc}</p>
+        <p>{content.desc2}</p>
       </StyledTextWrapper>
     </StyledBannerWrapper>
   );

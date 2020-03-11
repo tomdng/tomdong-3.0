@@ -50,7 +50,8 @@ const StyledLink: AnyStyledComponent = styled(Link)`
   color: ${textSecondary};
   h1 {
     font-weight: normal;
-    font-size: 24px;
+    font-size: 18px;
+    margin-left: 2rem;
   }
 `;
 
@@ -87,6 +88,9 @@ const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
             <h1>{siteTitle}</h1>
           </StyledTitle>
           <StyledNavGroup>
+            <StyledLink to="/">
+              <h1>Projects</h1>
+            </StyledLink>
             <StyledLink to="/about-page">
               <h1>About</h1>
             </StyledLink>
