@@ -10,7 +10,7 @@ import { offWhite, textPrimary, textSecondary } from '../settings/index';
 // TODO: See if we want to have the footer immediately visible or if we
 // want to scroll down to see the footer
 const StyledAboutWrapper: AnyStyledComponent = styled.div`
-  height: calc(100vh - 200px);
+  height: calc(100vh - 5rem);
   background-color: ${offWhite};
   display: flex;
   flex-direction: column;

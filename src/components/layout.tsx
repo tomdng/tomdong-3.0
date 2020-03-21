@@ -14,7 +14,7 @@ import './override-defaults.css';
 
 const StyledSiteWrapper: AnyStyledComponent = styled.div`
   max-width: 100vw;
-  overflow: none;
+  overflow-x: none;
   display: flex;
   flex-direction: column;
 `;
