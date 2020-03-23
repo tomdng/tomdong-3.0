@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
-import { offWhite, textPrimary, textSecondary } from '../settings';
+import { offWhite, textPrimary, textSecondary } from '../../settings';
 
 const StyledBannerWrapper: AnyStyledComponent = styled.div`
   height: 100vh;

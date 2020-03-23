@@ -9,7 +9,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
-import Navbar from './navbar';
+import Navbar from '../navbar';
 import './override-defaults.css';
 
 const StyledSiteWrapper: AnyStyledComponent = styled.div`

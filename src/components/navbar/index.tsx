@@ -2,12 +2,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'gatsby';
-import { offWhite, textPrimary, textSecondary } from '../settings';
+import { offWhite, textPrimary, textSecondary } from '../../settings';
 
 interface StyleNavProps {
   visible: boolean;
 }
-// TODO: Clean up CSS transitions
+
 const StyledNavbar: AnyStyledComponent = styled.header`
   width: 100%;
   height: 5rem;
