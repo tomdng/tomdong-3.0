@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
 
+import { BigButton } from './bigButton';
 import { Image } from '../image';
 import { white, textPrimary, textSecondary } from '../../settings';
 
@@ -10,26 +11,33 @@ interface StyleProps {
 
 const StyledProject: AnyStyledComponent = styled.div`
   width: ${(props: StyleProps): string => (props.featured ? '60%' : 'auto')};
-  border: solid green;
   margin: 2rem 0;
   background: ${white};
+  border-radius: 5px;
   display: flex;
   flex-direction: ${(props: StyleProps): string =>
     props.featured ? 'row' : 'column'};
   justify-content: ${(props: StyleProps): string =>
     props.featured ? 'space-between' : 'center'};
+  align-items: stretch;
+  max-height: 32rem;
 `;
 
 const StyledProjectContents: AnyStyledComponent = styled.div`
-  margin: 1rem;
+  padding: 2rem 3rem;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   h1 {
+    margin: 0;
     color: ${textPrimary};
     font-size: 36px;
   }
 
   p {
+    margin: 1rem 0;
     color: ${textSecondary};
     font-size: 18px;
   }
@@ -38,8 +46,9 @@ const StyledProjectContents: AnyStyledComponent = styled.div`
 const StyledDescWrapper: AnyStyledComponent = styled.div``;
 
 const StyledImageWrapper: AnyStyledComponent = styled.div`
-  border: solid blue;
-  width: 500px;
+  border: solid green;
+  width: 40rem;
+  max-height: 24rem;
 `;
 
 interface ProjectProps {
@@ -57,12 +66,14 @@ const Project: React.FC<ProjectProps> = (props): JSX.Element => {
   return (
     <StyledProject featured={featured}>
       <StyledProjectContents>
-        <h1>{name}</h1>
-        <h1>{thumbnail}</h1>
-        <StyledDescWrapper dangerouslySetInnerHTML={{ __html: desc }} />
+        <div>
+          <h1>{name}</h1>
+          <StyledDescWrapper dangerouslySetInnerHTML={{ __html: desc }} />
+        </div>
+        <BigButton text="Learn More" />
       </StyledProjectContents>
       <StyledImageWrapper>
-        <Image thumbnail={thumbnail} />
+        <Image thumbnail={thumbnail} altText={altText} />
       </StyledImageWrapper>
     </StyledProject>
   );

@@ -6,7 +6,6 @@ import { Project } from '../project';
 import { offWhite } from '../../settings';
 
 const StyledFeaturedWrapper: AnyStyledComponent = styled.div`
-  border: solid blue;
   background: ${offWhite};
   display: flex;
   flex-direction: column;
@@ -34,6 +33,7 @@ const FeaturedProjects: React.FC = (): JSX.Element => {
     }
   `);
 
+  // TODO: Add types
   const projects = data.projects.nodes.map((element: any): any => {
     const { name, id, thumbnail, featured, altText } = element.frontmatter;
     return featured ? (

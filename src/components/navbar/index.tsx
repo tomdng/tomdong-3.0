@@ -16,6 +16,7 @@ const StyledNavbar: AnyStyledComponent = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99;
 
   transition: 0.2s ease-in-out;
   transform: translateY(
