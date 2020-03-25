@@ -10,17 +10,18 @@ interface StyleProps {
 }
 
 const StyledProject: AnyStyledComponent = styled.div`
-  width: ${(props: StyleProps): string => (props.featured ? '60%' : 'auto')};
-  margin: 2rem 0;
+  width: ${(props: StyleProps): string => (props.featured ? '80%' : 'auto')};
+  margin: 3rem 0;
   background: ${white};
   border-radius: 5px;
+  box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: ${(props: StyleProps): string =>
     props.featured ? 'row' : 'column'};
   justify-content: ${(props: StyleProps): string =>
     props.featured ? 'space-between' : 'center'};
   align-items: stretch;
-  max-height: 32rem;
+  max-height: 28rem;
 `;
 
 const StyledProjectContents: AnyStyledComponent = styled.div`
@@ -46,9 +47,8 @@ const StyledProjectContents: AnyStyledComponent = styled.div`
 const StyledDescWrapper: AnyStyledComponent = styled.div``;
 
 const StyledImageWrapper: AnyStyledComponent = styled.div`
-  border: solid green;
   width: 40rem;
-  max-height: 24rem;
+  max-height: 28rem;
 `;
 
 interface ProjectProps {
