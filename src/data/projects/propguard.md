@@ -3,6 +3,7 @@ type: 'project'
 id: 'propguard'
 name: 'Propguard'
 thumbnail: 'image2.jpg'
+link: 'https://github.com/MissouriMRR/propguard'
 featured: true
 altText: 'Thumnnail for Propguard project'
 ---

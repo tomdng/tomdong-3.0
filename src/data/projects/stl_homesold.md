@@ -4,6 +4,7 @@ id: 'stlhomesold'
 name: 'STL Homesold'
 thumbnail: 'image1.jpg'
 featured: true
+link: '#'
 altText: 'Thumbnail for STL Homesold project'
 ---
 
