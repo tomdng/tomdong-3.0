@@ -1,6 +1,6 @@
 ---
 type: 'project'
-id: 'sushiAi'
+id: 'sushiai'
 name: 'Sushi Ai'
 thumbnail: 'image3.jpg'
 link: 'https://github.com/tomdng/sushi-ai'
