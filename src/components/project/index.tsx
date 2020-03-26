@@ -12,7 +12,8 @@ interface StyleProps {
 
 const StyledProject: AnyStyledComponent = styled.div`
   width: ${(props: StyleProps): string => (props.featured ? '80%' : '20rem')};
-  margin: 3rem 0;
+  margin-bottom: ${(props: StyleProps): string =>
+    props.featured ? '6rem' : '3rem'};
   background: ${white};
   border-radius: 5px;
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);
@@ -25,12 +26,12 @@ const StyledProject: AnyStyledComponent = styled.div`
     props.featured ? 'stretch' : 'center'};
   max-height: ${(props: StyleProps): string =>
     props.featured ? '28rem' : '100%'};
+  overflow: hidden;
 `;
 
 const StyledProjectContents: AnyStyledComponent = styled.div`
   padding: ${(props: StyleProps): string =>
     props.featured ? '3rem 2rem 2rem 2rem' : '1.5rem 1.5rem 0.5rem 1.5rem'};
-  max-width: 800px;
   height: ${(props: StyleProps): string => (props.featured ? 'auto' : '100%')};
   display: flex;
   flex-direction: column;

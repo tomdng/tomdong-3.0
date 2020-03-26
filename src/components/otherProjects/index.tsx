@@ -8,15 +8,24 @@ import { offWhite } from '../../settings';
 const StyledOtherProjects: AnyStyledComponent = styled.div`
   background: ${offWhite};
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 
-// TODO: Make flexbox behave more like a grid or just use CSS grid
+const StyledSectionTitle: AnyStyledComponent = styled.div`
+  width: 80%;
+  font-size: 72px;
+  font-weight: 600;
+  margin-bottom: 3rem;
+`;
+
 const StyledOtherWrapper: AnyStyledComponent = styled.div`
   width: 80%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
 `;
 
 const OtherProjects: React.FC = (): JSX.Element => {
@@ -65,6 +74,7 @@ const OtherProjects: React.FC = (): JSX.Element => {
 
   return (
     <StyledOtherProjects>
+      <StyledSectionTitle>Other Projects</StyledSectionTitle>
       <StyledOtherWrapper>{otherProjects}</StyledOtherWrapper>
     </StyledOtherProjects>
   );

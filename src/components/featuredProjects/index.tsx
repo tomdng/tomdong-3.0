@@ -5,8 +5,21 @@ import styled, { AnyStyledComponent } from 'styled-components';
 import { Project } from '../project';
 import { offWhite } from '../../settings';
 
-const StyledFeaturedWrapper: AnyStyledComponent = styled.div`
+const StyledFeaturedSection: AnyStyledComponent = styled.div`
   background: ${offWhite};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledSectionTitle: AnyStyledComponent = styled.h1`
+  width: 80%;
+  font-size: 72px;
+  font-weight: 600;
+  margin-bottom: 3rem;
+`;
+
+const StyledFeaturedWrapper: AnyStyledComponent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +70,12 @@ const FeaturedProjects: React.FC = (): JSX.Element => {
     ) : null;
   });
 
-  return <StyledFeaturedWrapper>{featuredProjects}</StyledFeaturedWrapper>;
+  return (
+    <StyledFeaturedSection>
+      <StyledSectionTitle>Featured Projects</StyledSectionTitle>
+      <StyledFeaturedWrapper>{featuredProjects}</StyledFeaturedWrapper>
+    </StyledFeaturedSection>
+  );
 };
 
 export { FeaturedProjects };
