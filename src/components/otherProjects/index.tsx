@@ -5,15 +5,21 @@ import styled, { AnyStyledComponent } from 'styled-components';
 import { Project } from '../project';
 import { offWhite } from '../../settings';
 
-const StyledFeaturedWrapper: AnyStyledComponent = styled.div`
+const StyledOtherProjects: AnyStyledComponent = styled.div`
   background: ${offWhite};
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
 `;
 
-const FeaturedProjects: React.FC = (): JSX.Element => {
+// TODO: Make flexbox behave more like a grid or just use CSS grid
+const StyledOtherWrapper: AnyStyledComponent = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
+const OtherProjects: React.FC = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query {
       projects: allMarkdownRemark(
@@ -34,8 +40,8 @@ const FeaturedProjects: React.FC = (): JSX.Element => {
     }
   `);
 
-  // TODO: Add types
-  const featuredProjects = data.projects.nodes.map((element: any): any => {
+  // TODO: Add Types
+  const otherProjects = data.projects.nodes.map((element: any): any => {
     const {
       name,
       id,
@@ -44,7 +50,7 @@ const FeaturedProjects: React.FC = (): JSX.Element => {
       featured,
       altText,
     } = element.frontmatter;
-    return featured ? (
+    return featured ? null : (
       <Project
         name={name}
         thumbnail={thumbnail}
@@ -54,10 +60,14 @@ const FeaturedProjects: React.FC = (): JSX.Element => {
         desc={element.html}
         key={id}
       />
-    ) : null;
+    );
   });
 
-  return <StyledFeaturedWrapper>{featuredProjects}</StyledFeaturedWrapper>;
+  return (
+    <StyledOtherProjects>
+      <StyledOtherWrapper>{otherProjects}</StyledOtherWrapper>
+    </StyledOtherProjects>
+  );
 };
 
-export { FeaturedProjects };
+export { OtherProjects };

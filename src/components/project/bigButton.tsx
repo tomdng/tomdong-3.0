@@ -14,12 +14,22 @@ const StyledButton: AnyStyledComponent = styled.button`
   font-size: 18px;
 `;
 
+// TODO: Add hover styling
+const StyledLink: AnyStyledComponent = styled.a`
+  text-decoration: none;
+`;
+
 interface BigButtonProps {
   text: string;
+  link: string;
 }
 
-const BigButton: React.FC<BigButtonProps> = ({ text }) => {
-  return <StyledButton>{text}</StyledButton>;
+const BigButton: React.FC<BigButtonProps> = ({ text, link }) => {
+  return (
+    <StyledLink href={link}>
+      <StyledButton>{text}</StyledButton>
+    </StyledLink>
+  );
 };
 
 export { BigButton };

@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import { Banner } from '../components/banner';
 import { FeaturedProjects } from '../components/featuredProjects';
+import { OtherProjects } from '../components/otherProjects';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -28,6 +29,7 @@ const IndexPage = ({ data }: QueryProps): JSX.Element => {
       <SEO title="Home" />
       <Banner content={data.banner.nodes[0].frontmatter} />
       <FeaturedProjects />
+      <OtherProjects />
     </Layout>
   );
 };
