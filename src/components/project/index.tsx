@@ -13,7 +13,7 @@ interface StyleProps {
 const StyledProject: AnyStyledComponent = styled.div`
   width: ${(props: StyleProps): string => (props.featured ? '80%' : '20rem')};
   margin-bottom: ${(props: StyleProps): string =>
-    props.featured ? '6rem' : '3rem'};
+    props.featured ? '6rem' : '4rem'};
   background: ${white};
   border-radius: 5px;
   box-shadow: 0 2px 25px rgba(0, 0, 0, 0.1);

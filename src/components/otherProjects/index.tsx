@@ -28,6 +28,18 @@ const StyledOtherWrapper: AnyStyledComponent = styled.div`
   justify-items: center;
 `;
 
+interface ProjectElement {
+  html: HTMLElement;
+  frontmatter: {
+    name: string;
+    id: string;
+    thumbnail: string;
+    link: string;
+    featured: boolean;
+    altText: string;
+  };
+}
+
 const OtherProjects: React.FC = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query {
@@ -49,8 +61,7 @@ const OtherProjects: React.FC = (): JSX.Element => {
     }
   `);
 
-  // TODO: Add Types
-  const otherProjects = data.projects.nodes.map((element: any): any => {
+  const otherProjects = data.projects.nodes.map((element: ProjectElement) => {
     const {
       name,
       id,

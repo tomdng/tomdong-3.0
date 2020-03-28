@@ -26,6 +26,18 @@ const StyledFeaturedWrapper: AnyStyledComponent = styled.div`
   align-items: center;
 `;
 
+interface ProjectElement {
+  html: HTMLElement;
+  frontmatter: {
+    name: string;
+    id: string;
+    thumbnail: string;
+    link: string;
+    featured: boolean;
+    altText: string;
+  };
+}
+
 const FeaturedProjects: React.FC = (): JSX.Element => {
   const data = useStaticQuery(graphql`
     query {
@@ -47,28 +59,29 @@ const FeaturedProjects: React.FC = (): JSX.Element => {
     }
   `);
 
-  // TODO: Add types
-  const featuredProjects = data.projects.nodes.map((element: any): any => {
-    const {
-      name,
-      id,
-      thumbnail,
-      link,
-      featured,
-      altText,
-    } = element.frontmatter;
-    return featured ? (
-      <Project
-        name={name}
-        thumbnail={thumbnail}
-        link={link}
-        featured={featured}
-        altText={altText}
-        desc={element.html}
-        key={id}
-      />
-    ) : null;
-  });
+  const featuredProjects = data.projects.nodes.map(
+    (element: ProjectElement) => {
+      const {
+        name,
+        id,
+        thumbnail,
+        link,
+        featured,
+        altText,
+      } = element.frontmatter;
+      return featured ? (
+        <Project
+          name={name}
+          thumbnail={thumbnail}
+          link={link}
+          featured={featured}
+          altText={altText}
+          desc={element.html}
+          key={id}
+        />
+      ) : null;
+    }
+  );
 
   return (
     <StyledFeaturedSection>
