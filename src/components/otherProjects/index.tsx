@@ -3,14 +3,15 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Project } from '../project';
-import { offWhite } from '../../settings';
 
 const StyledOtherProjects: AnyStyledComponent = styled.div`
-  background: ${offWhite};
+  width: 100%;
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: -4rem;
 `;
 
 const StyledSectionTitle: AnyStyledComponent = styled.div`

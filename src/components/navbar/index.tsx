@@ -102,4 +102,4 @@ const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
   );
 };
 
-export default Navbar;
+export { Navbar };

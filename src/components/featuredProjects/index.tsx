@@ -3,10 +3,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Project } from '../project';
-import { offWhite } from '../../settings';
 
 const StyledFeaturedSection: AnyStyledComponent = styled.div`
-  background: ${offWhite};
+  max-width: 1500px;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,23 +1,16 @@
 import React from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
-import { offWhite, textPrimary, textSecondary } from '../../settings';
+import { textPrimary, textSecondary } from '../../settings';
 
 const StyledBannerWrapper: AnyStyledComponent = styled.div`
   height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  background: ${offWhite};
-  text-align: center;
-`;
-
-const StyledTextWrapper: AnyStyledComponent = styled.div`
+  width: 60%;
   max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  text-align: center;
 
   h1 {
     font-size: 72px;
@@ -45,11 +38,9 @@ interface BannerProps {
 const Banner: React.FC<BannerProps> = ({ content }): JSX.Element => {
   return (
     <StyledBannerWrapper>
-      <StyledTextWrapper>
-        <h1>{content.title}</h1>
-        <p>{content.desc}</p>
-        <p>{content.desc2}</p>
-      </StyledTextWrapper>
+      <h1>{content.title}</h1>
+      <p>{content.desc}</p>
+      <p>{content.desc2}</p>
     </StyledBannerWrapper>
   );
 };
