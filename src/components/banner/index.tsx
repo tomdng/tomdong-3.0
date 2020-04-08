@@ -1,4 +1,5 @@
 import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 import { textPrimary, textSecondary } from '../../settings';
 
@@ -27,20 +28,30 @@ const StyledBannerWrapper: AnyStyledComponent = styled.div`
   }
 `;
 
-interface BannerProps {
-  content: {
-    title: string;
-    desc: string;
-    desc2: string;
-  };
-}
+const Banner: React.FC = (): JSX.Element => {
+  const data = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(
+        filter: { frontmatter: { id: { eq: "home-banner" } } }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            desc
+            desc2
+          }
+        }
+      }
+    }
+  `);
 
-const Banner: React.FC<BannerProps> = ({ content }): JSX.Element => {
+  const [bannerData] = data.allMarkdownRemark.nodes;
+
   return (
     <StyledBannerWrapper>
-      <h1>{content.title}</h1>
-      <p>{content.desc}</p>
-      <p>{content.desc2}</p>
+      <h1>{bannerData.frontmatter.title}</h1>
+      <p>{bannerData.frontmatter.desc}</p>
+      <p>{bannerData.frontmatter.desc2}</p>
     </StyledBannerWrapper>
   );
 };

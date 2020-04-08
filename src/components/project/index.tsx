@@ -31,7 +31,7 @@ const StyledProject: AnyStyledComponent = styled.div`
 
 const StyledProjectContents: AnyStyledComponent = styled.div`
   padding: ${(props: StyleProps): string =>
-    props.featured ? '3rem 2rem 2rem 2rem' : '1.5rem 1.5rem 0.5rem 1.5rem'};
+    props.featured ? '2rem 2rem 2rem 2rem' : '1.5rem 1.5rem 0.5rem 1.5rem'};
   height: ${(props: StyleProps): string => (props.featured ? 'auto' : '100%')};
   display: flex;
   flex-direction: column;
@@ -52,7 +52,10 @@ const StyledProjectContents: AnyStyledComponent = styled.div`
   }
 `;
 
-const StyledDescWrapper: AnyStyledComponent = styled.div``;
+const StyledDescWrapper: AnyStyledComponent = styled.div`
+  margin-bottom: ${(props: StyleProps): string =>
+    props.featured ? '4rem' : '0'};
+`;
 
 const StyledImageWrapper: AnyStyledComponent = styled.div`
   width: ${(props: StyleProps): string => (props.featured ? '40rem' : '20rem')};
@@ -78,7 +81,10 @@ const Project: React.FC<ProjectProps> = (props): JSX.Element => {
       <StyledProjectContents featured={featured}>
         <div>
           <h1>{name}</h1>
-          <StyledDescWrapper dangerouslySetInnerHTML={{ __html: desc }} />
+          <StyledDescWrapper
+            featured={featured}
+            dangerouslySetInnerHTML={{ __html: desc }}
+          />
         </div>
         {featured ? (
           <BigButton text="Learn More" link={link} />

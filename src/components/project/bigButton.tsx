@@ -5,7 +5,7 @@ import { grey, textPrimaryLight } from '../../settings';
 
 const StyledButton: AnyStyledComponent = styled.button`
   width: 10rem;
-  height: 2.5rem;
+  height: 3rem;
   margin: 0.5rem 0;
   background: ${grey};
   border: none;
