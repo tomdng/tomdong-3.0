@@ -25,11 +25,13 @@ const StyledNavbar: AnyStyledComponent = styled.header`
 `;
 
 const StyledNavbarContent: AnyStyledComponent = styled.div`
+  width: 80%;
+  /* Max-width is 80% of max-content width */
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  width: 80%;
 `;
 
 const StyledTitle: AnyStyledComponent = styled(Link)`
@@ -60,6 +62,7 @@ interface NavbarProps {
   siteTitle: string;
 }
 
+// TODO: In page routing
 const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
   const [curYPos, setCurYPos] = useState(0);
   const [visible, setVisible] = useState(true);

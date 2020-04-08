@@ -9,4 +9,7 @@ module.exports = {
   twitterLink: 'https://twitter.com/TranslucentLeaf',
   githubLink: 'https://github.com/tomdng',
   instaLink: 'https://www.instagram.com/tom_dong/',
+
+  maxContentWidth: '1500px',
+  maxTextWidth: '700px',
 };

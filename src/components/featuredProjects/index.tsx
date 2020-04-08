@@ -3,9 +3,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Project } from '../project';
+import { maxContentWidth } from '../../settings';
 
 const StyledFeaturedSection: AnyStyledComponent = styled.div`
-  max-width: 1500px;
+  max-width: ${maxContentWidth};
   display: flex;
   flex-direction: column;
   align-items: center;

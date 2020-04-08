@@ -3,10 +3,11 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Project } from '../project';
+import { maxContentWidth } from '../../settings';
 
 const StyledOtherProjects: AnyStyledComponent = styled.div`
   width: 100%;
-  max-width: 1500px;
+  max-width: ${maxContentWidth};
   display: flex;
   flex-direction: column;
   justify-content: center;

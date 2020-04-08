@@ -1,12 +1,13 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
-import { textPrimary, textSecondary } from '../../settings';
+
+import { textPrimary, textSecondary, maxTextWidth } from '../../settings';
 
 const StyledBannerWrapper: AnyStyledComponent = styled.div`
   height: 100vh;
   width: 60%;
-  max-width: 700px;
+  max-width: ${maxTextWidth};
   display: flex;
   flex-direction: column;
   justify-content: center;

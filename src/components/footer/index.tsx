@@ -4,6 +4,7 @@ import styled, { AnyStyledComponent } from 'styled-components';
 import {
   textPrimary,
   textSecondary,
+  maxTextWidth,
   githubLink,
   instaLink,
   twitterLink,
@@ -14,7 +15,7 @@ import TwitterIcon from '../../images/twitter.svg';
 
 const StyledFooter: AnyStyledComponent = styled.footer`
   width: 60%;
-  max-width: 700px;
+  max-width: ${maxTextWidth};
   padding: 4rem 0;
   display: flex;
   flex-direction: row;
