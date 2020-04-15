@@ -84,7 +84,7 @@ const FeaturedProjects: React.FC = (): JSX.Element => {
   );
 
   return (
-    <StyledFeaturedSection>
+    <StyledFeaturedSection id="projects">
       <StyledSectionTitle>Featured Projects</StyledSectionTitle>
       <StyledFeaturedWrapper>{featuredProjects}</StyledFeaturedWrapper>
     </StyledFeaturedSection>

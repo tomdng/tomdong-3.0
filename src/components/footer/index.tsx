@@ -1,7 +1,9 @@
 import React from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
+import { Link } from 'gatsby';
 
 import {
+  accent,
   textPrimary,
   textSecondary,
   maxTextWidth,
@@ -23,10 +25,18 @@ const StyledFooter: AnyStyledComponent = styled.footer`
   align-items: center;
 `;
 
-const StyledAuthorText: AnyStyledComponent = styled.h1`
+const StyledAuthorText: AnyStyledComponent = styled(Link)`
   color: ${textPrimary};
-  font-size: 18px;
-  font-weight: 600;
+  text-decoration: none;
+
+  h1 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  &:hover {
+    color: ${accent};
+  }
 `;
 
 const StyledSocialGroup: AnyStyledComponent = styled.div`
@@ -51,12 +61,23 @@ const StyledSocialLink: AnyStyledComponent = styled.a`
   p {
     font-size: 18px;
   }
+
+  &:hover {
+    color: ${accent};
+
+    svg {
+      filter: invert(80%) sepia(9%) saturate(2032%) hue-rotate(42deg)
+        brightness(88%) contrast(81%);
+    }
+  }
 `;
 
 const Footer: React.FC = (): JSX.Element => {
   return (
     <StyledFooter>
-      <StyledAuthorText>Designed, built by Tom Dong.</StyledAuthorText>
+      <StyledAuthorText to="/about-page">
+        <h1>Designed, built by Tom Dong.</h1>
+      </StyledAuthorText>
       <StyledSocialGroup>
         <StyledSocialLink href={twitterLink}>
           <TwitterIcon />

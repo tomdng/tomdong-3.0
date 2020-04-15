@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'gatsby';
-import { offWhite, textPrimary, textSecondary } from '../../settings';
+import { accent, offWhite, textPrimary, textSecondary } from '../../settings';
 
 interface StyleNavProps {
   visible: boolean;
@@ -32,11 +32,16 @@ const StyledNavbarContent: AnyStyledComponent = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
+
+  a:hover {
+    color: ${accent};
+  }
 `;
 
 const StyledTitle: AnyStyledComponent = styled(Link)`
   color: ${textPrimary};
   text-decoration: none;
+
   h1 {
     font-size: 28px;
     font-weight: 600;
@@ -92,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
             <h1>{siteTitle}</h1>
           </StyledTitle>
           <StyledNavGroup>
-            <StyledLink to="/">
+            <StyledLink to="#projects">
               <h1>Projects</h1>
             </StyledLink>
             <StyledLink to="/about-page">

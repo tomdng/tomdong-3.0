@@ -7,10 +7,9 @@ import SEO from '../components/seo';
 
 import { offWhite, textPrimary, textSecondary } from '../settings/index';
 
-// TODO: See if we want to have the footer immediately visible or if we
-// want to scroll down to see the footer
 const StyledAboutWrapper: AnyStyledComponent = styled.div`
-  height: calc(100vh - 5rem);
+  height: calc(100vh - 4.5rem);
+  min-height: 800px;
   background-color: ${offWhite};
   display: flex;
   flex-direction: column;

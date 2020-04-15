@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
 
-import { grey, textPrimaryLight } from '../../settings';
+import { accent, grey, textPrimaryLight } from '../../settings';
 
 const StyledButton: AnyStyledComponent = styled.button`
   width: 10rem;
@@ -12,9 +12,13 @@ const StyledButton: AnyStyledComponent = styled.button`
   border-radius: 5px;
   color: ${textPrimaryLight};
   font-size: 18px;
+
+  &:hover {
+    background: ${accent};
+    cursor: pointer;
+  }
 `;
 
-// TODO: Add hover styling
 const StyledLink: AnyStyledComponent = styled.a`
   text-decoration: none;
 `;
