@@ -35,9 +35,3 @@ yarn start
 ```
 
 4. Now play around, code, and enjoy!
-
-## Using my code/design
-
-I'm not sure if either my code or design is worth stealing from. If you think it is, please don't use it for commercial purposes. That's just mean.
-
-As far as personal use, go ahead! But the artist in me really wants to ask you if you really are fine just straight up copy-pasting design and code with customizing or remixing it. You'll learn a lot more if you put your twist on it. Plus, you'll be original. Win and win!
