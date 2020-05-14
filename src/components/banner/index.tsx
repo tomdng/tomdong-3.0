@@ -27,6 +27,19 @@ const StyledBannerWrapper: AnyStyledComponent = styled.div`
     margin: 0.5rem 0;
     color: ${textSecondary};
   }
+
+  @media (max-width: 700px) {
+    width: 80%;
+    height: 60vh;
+
+    h1 {
+      font-size: 36px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
 `;
 
 const Banner: React.FC = (): JSX.Element => {

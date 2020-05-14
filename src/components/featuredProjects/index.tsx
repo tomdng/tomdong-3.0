@@ -6,6 +6,7 @@ import { Project } from '../project';
 import { maxContentWidth } from '../../settings';
 
 const StyledFeaturedSection: AnyStyledComponent = styled.div`
+  width: 100vw;
   max-width: ${maxContentWidth};
   display: flex;
   flex-direction: column;
@@ -17,6 +18,19 @@ const StyledSectionTitle: AnyStyledComponent = styled.h1`
   font-size: 72px;
   font-weight: 600;
   margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 700px) {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 36px;
+  }
 `;
 
 const StyledFeaturedWrapper: AnyStyledComponent = styled.div`

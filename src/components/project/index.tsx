@@ -4,7 +4,7 @@ import styled, { AnyStyledComponent } from 'styled-components';
 import { BigButton } from './bigButton';
 import { SmallButton } from './smallButton';
 import { Image } from '../image';
-import { white, textPrimary, textSecondary } from '../../settings';
+import { white, offWhite, textPrimary, textSecondary } from '../../settings';
 
 interface StyleProps {
   featured: boolean;
@@ -27,6 +27,23 @@ const StyledProject: AnyStyledComponent = styled.div`
   max-height: ${(props: StyleProps): string =>
     props.featured ? '28rem' : '100%'};
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: ${(props: StyleProps): string => (props.featured ? '80%' : '16rem')};
+  }
+
+  @media (max-width: 700px) {
+    width: ${(props: StyleProps): string =>
+      props.featured ? '100%' : '16rem'};
+    background: ${(props: StyleProps): string =>
+      props.featured ? offWhite : white};
+    box-shadow: ${(props: StyleProps): string =>
+      props.featured ? 'none' : '0 2px 25px rgba(0, 0, 0, 0.1)'};
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    max-height: 100%;
+  }
 `;
 
 const StyledProjectContents: AnyStyledComponent = styled.div`
@@ -50,11 +67,25 @@ const StyledProjectContents: AnyStyledComponent = styled.div`
     color: ${textSecondary};
     font-size: 18px;
   }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
 `;
 
 const StyledDescWrapper: AnyStyledComponent = styled.div`
   margin-bottom: ${(props: StyleProps): string =>
     props.featured ? '4rem' : '0'};
+
+  @media (max-width: 700px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const StyledImageWrapper: AnyStyledComponent = styled.div`
@@ -62,6 +93,14 @@ const StyledImageWrapper: AnyStyledComponent = styled.div`
   height: ${(props: StyleProps): string => (props.featured ? 'auto' : '15rem')};
   max-height: ${(props: StyleProps): string =>
     props.featured ? '28rem' : 'none'};
+
+  @media (max-width: 700px) {
+    width: 20rem;
+    height: 15rem;
+    max-height: none;
+    box-shadow: ${(props: StyleProps): string =>
+      props.featured ? '0 2px 25px rgba(0, 0, 0, 0.1)' : 'none'};
+  }
 `;
 
 interface ProjectProps {

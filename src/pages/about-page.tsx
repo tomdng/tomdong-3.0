@@ -22,6 +22,12 @@ const StyledAboutWrapper: AnyStyledComponent = styled.div`
     margin: 1rem 0;
     color: ${textPrimary};
   }
+
+  @media (max-width: 700px) {
+    h1 {
+      font-size: 36px;
+    }
+  }
 `;
 
 const StyledContent: AnyStyledComponent = styled.div`
@@ -31,6 +37,10 @@ const StyledContent: AnyStyledComponent = styled.div`
   p {
     margin: 2rem 0;
     color: ${textSecondary};
+  }
+
+  @media (max-width: 700px) {
+    max-width: 80%;
   }
 `;
 
@@ -54,7 +64,7 @@ const SecondPage = ({ data }: AboutQueryProps): JSX.Element => {
 
   return (
     <Layout>
-      <SEO title="Page two" />
+      <SEO title="About" />
       <StyledAboutWrapper>
         <h1>{content.frontmatter.title}</h1>
         <StyledContent dangerouslySetInnerHTML={{ __html: content.html }} />

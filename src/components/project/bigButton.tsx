@@ -17,6 +17,12 @@ const StyledButton: AnyStyledComponent = styled.button`
     background: ${accent};
     cursor: pointer;
   }
+
+  @media (max-width: 700px) {
+    height: 2.5rem;
+    width: 8rem;
+    font-size: 16px;
+  }
 `;
 
 const StyledLink: AnyStyledComponent = styled.a`

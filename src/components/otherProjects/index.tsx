@@ -6,8 +6,7 @@ import { Project } from '../project';
 import { maxContentWidth } from '../../settings';
 
 const StyledOtherProjects: AnyStyledComponent = styled.div`
-  width: 100%;
-  max-width: ${maxContentWidth};
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,17 +16,40 @@ const StyledOtherProjects: AnyStyledComponent = styled.div`
 
 const StyledSectionTitle: AnyStyledComponent = styled.div`
   width: 80%;
+  max-width: ${maxContentWidth};
   font-size: 72px;
   font-weight: 600;
   margin-bottom: 3rem;
+
+  @media (max-width: 768px) {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 700px) {
+    font-size: 36px;
+  }
 `;
 
 const StyledOtherWrapper: AnyStyledComponent = styled.div`
   width: 80%;
+  max-width: ${maxContentWidth};
   margin-bottom: 3rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   justify-items: center;
+
+  @media (max-width: 1300px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 700px) {
+    justify-content: center;
+  }
 `;
 
 interface ProjectElement {

@@ -23,6 +23,15 @@ const StyledFooter: AnyStyledComponent = styled.footer`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const StyledAuthorText: AnyStyledComponent = styled(Link)`
@@ -32,6 +41,10 @@ const StyledAuthorText: AnyStyledComponent = styled(Link)`
   h1 {
     font-size: 18px;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+      margin-left: -2rem;
+    }
   }
 
   &:hover {

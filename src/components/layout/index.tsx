@@ -9,11 +9,12 @@ import './override-defaults.css';
 
 const StyledSiteWrapper: AnyStyledComponent = styled.div`
   max-width: 100vw;
+  min-height: 100vh;
   background: ${offWhite};
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: none;
+  overflow-x: hidden;
 `;
 
 const StyledMain: AnyStyledComponent = styled.main`

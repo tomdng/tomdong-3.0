@@ -97,7 +97,7 @@ const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
             <h1>{siteTitle}</h1>
           </StyledTitle>
           <StyledNavGroup>
-            <StyledLink to="#projects">
+            <StyledLink to="/#projects">
               <h1>Projects</h1>
             </StyledLink>
             <StyledLink to="/about-page">
