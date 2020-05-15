@@ -100,6 +100,9 @@ const StyledImageWrapper: AnyStyledComponent = styled.div`
     max-height: none;
     box-shadow: ${(props: StyleProps): string =>
       props.featured ? '0 2px 25px rgba(0, 0, 0, 0.1)' : 'none'};
+    border-radius: ${(props: StyleProps): string =>
+      props.featured ? '5px' : '0'};
+    overflow: hidden;
   }
 `;
 

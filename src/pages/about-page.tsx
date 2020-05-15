@@ -24,6 +24,8 @@ const StyledAboutWrapper: AnyStyledComponent = styled.div`
   }
 
   @media (max-width: 700px) {
+    margin: 12rem 0 6rem 0;
+
     h1 {
       font-size: 36px;
     }

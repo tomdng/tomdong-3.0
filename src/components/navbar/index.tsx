@@ -2,7 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import styled, { AnyStyledComponent } from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 import { Link } from 'gatsby';
+
 import { accent, offWhite, textPrimary, textSecondary } from '../../settings';
+import MenuIcon from '../../images/menu.svg';
+import CloseIcon from '../../images/close-circle.svg';
 
 interface StyleNavProps {
   visible: boolean;
@@ -22,6 +25,10 @@ const StyledNavbar: AnyStyledComponent = styled.header`
   transform: translateY(
     ${(props: StyleNavProps): number => (props.visible ? 0 : -5)}rem
   );
+
+  @media (max-width: 700px) {
+    height: 4rem;
+  }
 `;
 
 const StyledNavbarContent: AnyStyledComponent = styled.div`
@@ -36,6 +43,10 @@ const StyledNavbarContent: AnyStyledComponent = styled.div`
   a:hover {
     color: ${accent};
   }
+
+  @media (max-width: 700px) {
+    align-items: center;
+  }
 `;
 
 const StyledTitle: AnyStyledComponent = styled(Link)`
@@ -45,12 +56,20 @@ const StyledTitle: AnyStyledComponent = styled(Link)`
   h1 {
     font-size: 28px;
     font-weight: 600;
+
+    @media (max-width: 700px) {
+      font-size: 24px;
+    }
   }
 `;
 
 const StyledNavGroup: AnyStyledComponent = styled.div`
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 `;
 
 const StyledLink: AnyStyledComponent = styled(Link)`
@@ -63,6 +82,38 @@ const StyledLink: AnyStyledComponent = styled(Link)`
   }
 `;
 
+const StyledMobileIcon: AnyStyledComponent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    padding: 0;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+`;
+
+const StyledMobileMenu: AnyStyledComponent = styled.div`
+  height: calc(100vh - 4rem);
+  width: 100vw;
+  position: absolute;
+  top: 4rem;
+  background: ${offWhite};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    h1 {
+      margin: 2rem 0 2rem 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+  }
+`;
+
 interface NavbarProps {
   siteTitle: string;
 }
@@ -71,10 +122,13 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
   const [curYPos, setCurYPos] = useState(0);
   const [visible, setVisible] = useState(true);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const handleScroll = useCallback(() => {
-    if (window.scrollY > curYPos) setVisible(false);
-    else setVisible(true);
+    if (window.scrollY > curYPos) {
+      setVisible(false);
+      setMobileMenu(false);
+    } else setVisible(true);
 
     setCurYPos(window.scrollY);
   }, [curYPos]);
@@ -104,7 +158,23 @@ const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
               <h1>About</h1>
             </StyledLink>
           </StyledNavGroup>
+          <StyledMobileIcon
+            onClick={(): void => setMobileMenu(!mobileMenu)}
+            open={mobileMenu}
+          >
+            {mobileMenu ? <CloseIcon /> : <MenuIcon />}
+          </StyledMobileIcon>
         </StyledNavbarContent>
+        {mobileMenu && visible ? (
+          <StyledMobileMenu>
+            <StyledLink to="/#projects">
+              <h1>Projects</h1>
+            </StyledLink>
+            <StyledLink to="/about-page">
+              <h1>About</h1>
+            </StyledLink>
+          </StyledMobileMenu>
+        ) : null}
       </StyledNavbar>
     </CSSTransition>
   );

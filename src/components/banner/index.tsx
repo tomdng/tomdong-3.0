@@ -31,6 +31,7 @@ const StyledBannerWrapper: AnyStyledComponent = styled.div`
   @media (max-width: 700px) {
     width: 80%;
     height: 60vh;
+    margin: 4rem 0 2rem 0;
 
     h1 {
       font-size: 36px;
