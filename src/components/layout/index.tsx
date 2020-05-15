@@ -1,5 +1,4 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Navbar } from '../navbar';
@@ -25,19 +24,9 @@ const StyledMain: AnyStyledComponent = styled.main`
 
 // TODO: Look into defining styled-component themes here
 const Layout: React.FC = ({ children }): JSX.Element => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <StyledSiteWrapper>
-      <Navbar siteTitle={data.site.siteMetadata.title} />
+      <Navbar />
       <StyledMain>{children}</StyledMain>
       <Footer />
     </StyledSiteWrapper>

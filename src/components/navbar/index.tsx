@@ -92,6 +92,10 @@ const StyledMobileIcon: AnyStyledComponent = styled.div`
     height: 2.5rem;
     width: 2.5rem;
   }
+
+  @media (min-width: 701px) {
+    display: none;
+  }
 `;
 
 const StyledMobileMenu: AnyStyledComponent = styled.div`
@@ -114,12 +118,7 @@ const StyledMobileMenu: AnyStyledComponent = styled.div`
   }
 `;
 
-interface NavbarProps {
-  siteTitle: string;
-}
-
-// TODO: In page routing
-const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
+const Navbar: React.FC = (): JSX.Element => {
   const [curYPos, setCurYPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -148,7 +147,7 @@ const Navbar: React.FC<NavbarProps> = ({ siteTitle }): JSX.Element => {
       <StyledNavbar visible={visible}>
         <StyledNavbarContent>
           <StyledTitle to="/">
-            <h1>{siteTitle}</h1>
+            <h1>Tom Dong</h1>
           </StyledTitle>
           <StyledNavGroup>
             <StyledLink to="/#projects">
