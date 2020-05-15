@@ -7,6 +7,7 @@ import { accent, maxContentWidth } from '../../settings';
 
 const StyledOtherProjects: AnyStyledComponent = styled.div`
   width: 100vw;
+  max-width: ${maxContentWidth};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,7 +17,6 @@ const StyledOtherProjects: AnyStyledComponent = styled.div`
 
 const StyledSectionTitle: AnyStyledComponent = styled.div`
   width: 80%;
-  max-width: ${maxContentWidth};
   color: ${accent};
   font-size: 72px;
   font-weight: 600;
@@ -35,7 +35,6 @@ const StyledSectionTitle: AnyStyledComponent = styled.div`
 
 const StyledOtherWrapper: AnyStyledComponent = styled.div`
   width: 80%;
-  max-width: ${maxContentWidth};
   margin-bottom: 3rem;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;

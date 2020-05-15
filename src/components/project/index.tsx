@@ -28,7 +28,7 @@ const StyledProject: AnyStyledComponent = styled.div`
     props.featured ? '28rem' : '100%'};
   overflow: hidden;
 
-  @media (max-width: 768px) {
+  @media (max-width: 810px) {
     width: ${(props: StyleProps): string => (props.featured ? '80%' : '16rem')};
   }
 
