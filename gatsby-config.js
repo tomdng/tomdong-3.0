@@ -4,8 +4,8 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    title: `Tom Dong`,
-    description: `Tom Dong is on a mission to make apps beautiful not only on the outside with beautiful design but also on the inside with great functionality.`,
+    title: `Tom Dong | Front-end Developer`,
+    description: `I'm a computer science major who's passionate about front-end development with an eye for basic design.`,
     author: `Tom Dong`,
   },
   plugins: [
@@ -29,13 +29,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Tom Dong | Front-end Developer`,
+        short_name: `Tom Dong`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#f9f9f9`,
+        theme_color: `#f9f9f9`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,
