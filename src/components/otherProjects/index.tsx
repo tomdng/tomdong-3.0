@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Project } from '../project';
-import { maxContentWidth } from '../../settings';
+import { accent, maxContentWidth } from '../../settings';
 
 const StyledOtherProjects: AnyStyledComponent = styled.div`
   width: 100vw;
@@ -17,6 +17,7 @@ const StyledOtherProjects: AnyStyledComponent = styled.div`
 const StyledSectionTitle: AnyStyledComponent = styled.div`
   width: 80%;
   max-width: ${maxContentWidth};
+  color: ${accent};
   font-size: 72px;
   font-weight: 600;
   margin-bottom: 3rem;
@@ -48,7 +49,8 @@ const StyledOtherWrapper: AnyStyledComponent = styled.div`
   }
 
   @media (max-width: 700px) {
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 `;
 

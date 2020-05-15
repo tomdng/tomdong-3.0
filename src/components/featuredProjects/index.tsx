@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
 import { Project } from '../project';
-import { maxContentWidth } from '../../settings';
+import { accent, maxContentWidth } from '../../settings';
 
 const StyledFeaturedSection: AnyStyledComponent = styled.div`
   width: 100vw;
@@ -15,6 +15,7 @@ const StyledFeaturedSection: AnyStyledComponent = styled.div`
 
 const StyledSectionTitle: AnyStyledComponent = styled.h1`
   width: 80%;
+  color: ${accent};
   font-size: 72px;
   font-weight: 600;
   margin-bottom: 3rem;

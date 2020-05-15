@@ -95,7 +95,7 @@ const StyledImageWrapper: AnyStyledComponent = styled.div`
     props.featured ? '28rem' : 'none'};
 
   @media (max-width: 700px) {
-    width: 20rem;
+    width: ${(props: StyleProps): string => (props.featured ? '90%' : '100%')};
     height: 15rem;
     max-height: none;
     box-shadow: ${(props: StyleProps): string =>

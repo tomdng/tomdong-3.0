@@ -2,7 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { AnyStyledComponent } from 'styled-components';
 
-import { textPrimary, textSecondary, maxTextWidth } from '../../settings';
+import { accent, textSecondary, maxTextWidth } from '../../settings';
 
 const StyledBannerWrapper: AnyStyledComponent = styled.div`
   height: 100vh;
@@ -18,7 +18,7 @@ const StyledBannerWrapper: AnyStyledComponent = styled.div`
     font-size: 72px;
     font-weight: 700;
     margin: 2rem 0;
-    color: ${textPrimary};
+    color: ${accent};
   }
 
   p {
