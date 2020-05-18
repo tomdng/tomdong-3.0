@@ -32,10 +32,11 @@ const Image: React.FC<ImageProps> = ({ thumbnail, altText }): JSX.Element => {
     }
   `);
 
-  // TODO: Add types
-  const matchImage = data.images.nodes.find((element: any): any => {
-    return element.relativePath === thumbnail;
-  });
+  const matchImage = data.images.nodes.find(
+    (element: { relativePath: string }): boolean => {
+      return element.relativePath === thumbnail;
+    }
+  );
 
   return matchImage ? (
     <StyledImage fluid={matchImage.childImageSharp.fluid} alt={altText} />

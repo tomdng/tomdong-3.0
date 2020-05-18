@@ -5,7 +5,7 @@ import styled, { AnyStyledComponent } from 'styled-components';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import { offWhite, textPrimary, textSecondary } from '../settings/index';
+import { accent, offWhite, textSecondary } from '../settings/index';
 
 const StyledAboutWrapper: AnyStyledComponent = styled.div`
   height: calc(100vh - 4.5rem);
@@ -20,7 +20,7 @@ const StyledAboutWrapper: AnyStyledComponent = styled.div`
     font-size: 72px;
     font-weight: 700;
     margin: 1rem 0;
-    color: ${textPrimary};
+    color: ${accent};
   }
 
   @media (max-width: 700px) {

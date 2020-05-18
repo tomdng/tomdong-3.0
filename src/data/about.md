@@ -1,12 +1,12 @@
 ---
 id: 'about'
-title: 'The story.'
+title: 'my story.'
 ---
 
-When I was growing up there were two big parts of my life that always seemed distinct from each other. One side was a lot creative, as I became interested in photography, filmmaking, and 3D animation. But on the other side I enjoyed engineering and being able to do things like creating robots and developing websites.
+After finishing high school I was at odds figuring out what I should be doing for the rest of my life. My high school electives looked a little bit like a "how to get into STEM" guide while at home I was making 3D art whenever I had the free time.
 
-But the common thread I realized about the two is that I simply just like building things. Taking ideas and turning them into reality is what I try to do in my day to day life.
+While the specifics of what I wanted to do weren't there, I knew I had to be in a place where I could build things. Not only did I want to build things but I also wanted to make meaningful tools and experiences.
 
-At college I’m in an organization where every day I watch people build carbon fiber drones from the ground up, while I design and develop webapps for that same team on the software side.
+As I studied computer science, I discovered the world of web development. From designing the look and feel of a website, then bringing those UI concepts to life with something like ReactJS, and finally optimizing the performance and accessbility of the final product is something that requires a team of people who can solve problems but with a creative twist to it. Now I know what I want to do.
 
-As for where the future is for me, design-orientated front-end development is ultimately what I want to do. To be able to contribute to both the creative and technical side of a project while also being the bridge between two different teams is the dream that I’m working on.
+While I do have an eye for design and I also work on backend development, the sum of my experiences currently make me a front-end developer. Regardless, I'm here to learn everything possible and I first and foremost am a creatively-orientated problem solver more than anything.

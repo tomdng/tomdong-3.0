@@ -2,7 +2,7 @@
 type: 'project'
 id: 'sushiai'
 name: 'Sushi Ai'
-thumbnail: 'image3.jpg'
+thumbnail: 'sushi_ai.jpg'
 link: 'https://github.com/tomdng/sushi-ai'
 featured: false
 altText: 'Thumbnail for Sushi Ai project'

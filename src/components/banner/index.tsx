@@ -17,7 +17,7 @@ const StyledBannerWrapper: AnyStyledComponent = styled.div`
   h1 {
     font-size: 72px;
     font-weight: 700;
-    margin: 2rem 0;
+    margin: 1.25rem 0;
     color: ${accent};
   }
 
