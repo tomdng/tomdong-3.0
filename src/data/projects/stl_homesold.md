@@ -9,5 +9,3 @@ altText: 'Thumbnail for STL Homesold project'
 ---
 
 Website I designed and built for a client involved in the real estate business. Built with Typescript, ReactJS, and EmailJS.
-
-<script>console.log("Hi")</script>
