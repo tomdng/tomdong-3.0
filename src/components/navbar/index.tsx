@@ -21,9 +21,9 @@ const StyledNavbar: AnyStyledComponent = styled.header`
   align-items: center;
   z-index: 99;
 
-  transition: 0.2s ease-in-out;
+  transition: 50ms ease-in-out;
   transform: translateY(
-    ${(props: StyleNavProps): number => (props.visible ? 0 : -5)}rem
+    ${(props: StyleNavProps): string => (props.visible ? '0' : '-100%')}
   );
 
   @media (max-width: 700px) {
@@ -124,7 +124,7 @@ const Navbar: React.FC = (): JSX.Element => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const handleScroll = useCallback(() => {
-    if (window.scrollY > curYPos) {
+    if (window.scrollY > curYPos && window.scrollY > 100) {
       setVisible(false);
       setMobileMenu(false);
     } else setVisible(true);
@@ -143,7 +143,7 @@ const Navbar: React.FC = (): JSX.Element => {
   }, [handleScroll]);
 
   return (
-    <CSSTransition in={visible} timeout={10}>
+    <CSSTransition in={visible} timeout={50}>
       <StyledNavbar visible={visible}>
         <StyledNavbarContent>
           <StyledTitle to="/">
